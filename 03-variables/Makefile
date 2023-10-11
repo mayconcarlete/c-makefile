@@ -37,8 +37,8 @@ my_lib.o:
 		$(COMPILER_CALL) my_lib.cpp -c
 
 run:
-		./main
+		./$(EXECUTABLE_NAME)
 
 clean:
 		rm -f *.o
-		rm -f main
+		rm -f $(EXECUTABLE_NAME)
