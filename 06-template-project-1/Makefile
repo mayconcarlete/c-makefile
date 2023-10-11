@@ -38,7 +38,9 @@ endif
 CXX_SOURCES=$(wildcard $(SOURCE_DIR)/*.cpp)
 CXX_OBJECTS=$(patsubst $(SOURCE_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(CXX_SOURCES))
 
-build: create_build_dir $(CXX_OBJECTS)
+all: create_build_dir build
+
+build: $(CXX_OBJECTS)
 	echo $(CXX_SOURCES)
 	$(COMPILER_CALL) $(CXX_OBJECTS) $(LDFLAGS) -o $(BUILD_DIR)/$(EXECUTABLE_NAME)
 
