@@ -1,0 +1,3 @@
+*.o
+build/*
+06-template-project-1/build/mainDebug
