@@ -38,6 +38,10 @@ endif
 CXX_SOURCES=$(wildcard $(SOURCE_DIR)/*.cpp)
 CXX_OBJECTS=$(patsubst $(SOURCE_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(CXX_SOURCES))
 
+###############
+### TARGETS ###
+###############
+
 all: create_build_dir build
 
 build: $(CXX_OBJECTS)
@@ -47,7 +51,8 @@ build: $(CXX_OBJECTS)
 create_build_dir:
 	mkdir -p build
 # mkdir -p creates a new folder if not exists 
-
+# use @ if you don't want to see the output of the command, ex: @mkdir -p build
+# if you need to add multiples commands to the same terminal instance, concatenates the commands with operation &&
 
 $(BUILD_DIR)/%.o:$(SOURCE_DIR)/%.cpp
 	$(COMPILER_CALL) -c $< -o $@
